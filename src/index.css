@@ -1,0 +1,15 @@
+.key-box{
+    border : 0.2em solid black;
+    width : 3.5em;
+    align-self: center;
+    text-align: center;
+    margin: 0.5em;;
+}
+
+.key-row{
+    display: flex;
+}
+
+.letter{
+    margin:0.5em
+}
