@@ -1,4 +1,4 @@
-import './Index.css'
+import styles from './Keyboard.module.css'
 
 const keyboard = [
     ['q','w','e','r','t','y','u','i','o','p'],
@@ -11,9 +11,9 @@ const Keyboard:React.FC=()=> {
     <>
       {keyboard.map((keys,index)=>{
         return(
-      <div key ={index} className='key-row'>
+      <div key ={index} className={styles.key_row}>
         {keys.map((letter,index)=>(
-            <div key ={index} className='key-box'>{letter}</div>
+            <div key ={index} className={styles.key_box}>{letter}</div>
       ))}
       </div>
       )})}
