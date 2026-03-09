@@ -3,10 +3,10 @@ name: CI / Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main        
+      - main
   pull_request:
     branches:
-      - main      
+      - main
 
 permissions:
   contents: read
@@ -40,7 +40,7 @@ jobs:
   # ── Job 2: build and deploy (only on push to main) ─────────────────
   deploy:
     name: Build and deploy
-    needs: test           # only runs if tests pass
+    needs: test # only runs if tests pass
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
