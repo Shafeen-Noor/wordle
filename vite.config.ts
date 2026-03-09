@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "https://github.com/Shafeen-Noor/wordle.git",
+  base: "/wordle/",
   plugins: [react()],
   test: {
     environment: "jsdom",
