@@ -1,21 +1,19 @@
-import { useState } from "react";
-import Start from "./Start/Start";
-import Play from "./Play/Play";
+import { Route, Routes } from "react-router";
+import AppLayout from "./AppLayout";
+import Home from "./Home";
+import Play from "./Play";
+import { LeaderboardList, LeaderboardDetail } from "./Leaderboard";
 
 const App: React.FC = () => {
-  const [active, setActive] = useState(false);
-  if (!active) {
-    return (
-      <>
-        <Start onBegin={() => setActive(true)}></Start>
-      </>
-    );
-  }
-
   return (
-    <>
-      <Play></Play>
-    </>
+    <Routes>
+      <Route Component={AppLayout}>
+        <Route index Component={Home} />
+        <Route path="/play/:slug" Component={Play} />
+        <Route path="/leaderboard" Component={LeaderboardList} />
+        <Route path="/leaderboard/:slug" Component={LeaderboardDetail} />
+      </Route>
+    </Routes>
   );
 };
 
