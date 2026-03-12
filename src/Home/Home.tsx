@@ -1,4 +1,3 @@
-// src/Home/Home.tsx
 import { Link } from "react-router";
 import games from "../Games";
 

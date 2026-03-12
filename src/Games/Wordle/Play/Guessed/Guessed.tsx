@@ -1,5 +1,7 @@
 import styles from "./Guessed.module.css";
+
 const NUM_GUESSES = 6;
+
 const Guessed: React.FC<{
   guesses: string[];
   currentGuess: string;
@@ -13,7 +15,7 @@ const Guessed: React.FC<{
 
   return (
     <>
-      <h1 className={styles.guessed_heading}>Guessed</h1>
+      <h1 className={styles.guessed_heading}>Wordle</h1>
 
       {rows.map((word: string, rowIndex: number) => (
         <div key={rowIndex} className={styles.guessed_container}>
@@ -21,7 +23,7 @@ const Guessed: React.FC<{
             const letter = word[colIndex] ?? "_";
             return (
               <div
-                key="colIndex"
+                key={colIndex}
                 className={styles.letter}
                 style={{ background: getState(letter, colIndex) }}
               >
@@ -34,37 +36,5 @@ const Guessed: React.FC<{
     </>
   );
 };
-
-{
-  /* // <div key={rowIndex} className={styles.guessed_container}>
-        //     {word.split("").map((letter,colIndex)=>(
-        //       <div key={colIndex} style={{background: getState(letter,colIndex)}} className={styles.letter}>
-        //         {letter === "_" ? "" : letter}
-        //       </div>
-        //     ))
-        //     }
-        // </div>
-      ))} */
-}
-
-{
-  /* {Array.from<string>({ length: NUM_GUESSES })
-        .fill("______")
-        .map((word, index) => {
-          return (
-            <div key={index} className={styles.guessed_container}>
-              {word.split("").map((letter, index) => (
-                <div
-                  key={index}
-                  className={styles.letter}
-                  style={{ background: getState(letter, index) }}
-                >
-                  {letter === " " ? "_" : letter}
-                </div>
-              ))}
-            </div>
-          );
-        })} */
-}
 
 export default Guessed;
