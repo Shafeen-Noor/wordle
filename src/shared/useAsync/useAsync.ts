@@ -5,29 +5,29 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-} from "react";
+} from "react"
 
 export default function useAsync<Type>(
   fn: (initial: boolean) => Promise<Type>,
   deps: unknown[] = [],
 ): [Type | undefined, { refresh: () => void }] {
-  const fnRef = useRef(fn);
+  const fnRef = useRef(fn)
 
   useLayoutEffect(() => {
-    fnRef.current = fn;
-  });
+    fnRef.current = fn
+  })
 
-  const [promise, setPromise] = useState<Promise<Type>>();
+  const [promise, setPromise] = useState<Promise<Type>>()
 
   useEffect(() => {
-    setPromise(fnRef.current(true));
-  }, deps); // eslint-disable-line react-hooks/exhaustive-deps
+    setPromise(fnRef.current(true))
+  }, deps) // eslint-disable-line react-hooks/exhaustive-deps
 
   const refresh = useCallback(() => {
-    setPromise(fnRef.current(false));
-  }, []);
+    setPromise(fnRef.current(false))
+  }, [])
 
-  const value = promise && use(promise);
+  const value = promise && use(promise)
 
-  return [value, { refresh }];
+  return [value, { refresh }]
 }

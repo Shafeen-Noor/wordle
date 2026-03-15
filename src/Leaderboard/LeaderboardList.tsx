@@ -1,5 +1,5 @@
-import { Link } from "react-router";
-import leaderboardData from "./data";
+import { Link } from "react-router"
+import leaderboardData from "./data"
 
 const LeaderboardList: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const LeaderboardList: React.FC = () => {
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default LeaderboardList;
+export default LeaderboardList

@@ -1,1 +1,1 @@
-export { default } from "./Guessed";
+export { default } from "./Guessed"

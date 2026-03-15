@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router";
+import { Outlet, Link } from "react-router"
 
 const AppLayout: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const AppLayout: React.FC = () => {
       </nav>
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default AppLayout;
+export default AppLayout

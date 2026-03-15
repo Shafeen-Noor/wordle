@@ -1,6 +1,6 @@
-import { type Animal, createAnimalHooks } from "./animal";
+import { type Animal, createAnimalHooks } from "./animal"
 
-export type Dog = Animal;
+export type Dog = Animal
 
 export const { getAnimal: getDog, useAnimal: useDog } =
-  createAnimalHooks<Dog>("/dog?json=true");
+  createAnimalHooks<Dog>("/dog?json=true")

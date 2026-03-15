@@ -1,1 +1,1 @@
-export { default } from "./Go";
+export { default } from "./Go"

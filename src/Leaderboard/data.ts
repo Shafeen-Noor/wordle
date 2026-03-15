@@ -1,14 +1,14 @@
 export type Score = {
-  name: string;
-  score: number;
-};
+  name: string
+  score: number
+}
 
 export type LeaderboardData = {
   [slug: string]: {
-    title: string;
-    scores: Score[];
-  };
-};
+    title: string
+    scores: Score[]
+  }
+}
 
 const leaderboardData: LeaderboardData = {
   wordle: {
@@ -41,6 +41,6 @@ const leaderboardData: LeaderboardData = {
       { name: "Quinn", score: 570 },
     ],
   },
-};
+}
 
-export default leaderboardData;
+export default leaderboardData

@@ -1,8 +1,8 @@
-import { useParams, Link } from "react-router";
-import leaderboardData from "./data";
+import { useParams, Link } from "react-router"
+import leaderboardData from "./data"
 
 const LeaderboardDetail: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams<{ slug: string }>()
 
   if (!slug || !leaderboardData[slug]) {
     return (
@@ -10,10 +10,10 @@ const LeaderboardDetail: React.FC = () => {
         <h1>Not found</h1>
         <Link to="/leaderboard">Back to leaderboard</Link>
       </>
-    );
+    )
   }
 
-  const { title, scores } = leaderboardData[slug];
+  const { title, scores } = leaderboardData[slug]
 
   return (
     <>
@@ -27,7 +27,7 @@ const LeaderboardDetail: React.FC = () => {
       </ol>
       <Link to="/leaderboard">← Back to leaderboard</Link>
     </>
-  );
-};
+  )
+}
 
-export default LeaderboardDetail;
+export default LeaderboardDetail

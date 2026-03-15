@@ -1,8 +1,9 @@
-import { Route, Routes } from "react-router";
-import AppLayout from "./AppLayout";
-import Home from "./Home";
-import Play from "./Play";
-import { LeaderboardList, LeaderboardDetail } from "./Leaderboard";
+import { Route, Routes } from "react-router"
+
+import AppLayout from "./AppLayout"
+import Home from "./Home"
+import Play from "./Play"
+import { LeaderboardList, LeaderboardDetail } from "./Leaderboard"
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const App: React.FC = () => {
         <Route path="/leaderboard/:slug" Component={LeaderboardDetail} />
       </Route>
     </Routes>
-  );
-};
+  )
+}
 
-export default App;
+export default App

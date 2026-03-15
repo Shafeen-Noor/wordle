@@ -4,7 +4,7 @@ const Go: React.FC = () => {
       <h1>Go</h1>
       <p>Coming soon!</p>
     </>
-  );
-};
+  )
+}
 
-export default Go;
+export default Go

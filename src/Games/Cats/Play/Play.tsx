@@ -1,11 +1,11 @@
-import { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
+import { Suspense } from "react"
+import { ErrorBoundary } from "react-error-boundary"
 
-import { useCat, type Cat } from "../api";
+import { useCat, type Cat } from "../api"
 
 function getErrorMessage(error: unknown): string {
-  if (error instanceof Error) return `Error: ${error.message}`;
-  return "Something went wrong.";
+  if (error instanceof Error) return `Error: ${error.message}`
+  return "Something went wrong."
 }
 
 const CatsWrapper: React.FC = () => {
@@ -22,13 +22,13 @@ const CatsWrapper: React.FC = () => {
         <CatsPlay />
       </Suspense>
     </ErrorBoundary>
-  );
-};
+  )
+}
 
 const CatsPlay: React.FC = () => {
-  const [cat, { refresh }] = useCat();
-  return <CatsView cat={cat} refresh={refresh} />;
-};
+  const [cat, { refresh }] = useCat()
+  return <CatsView cat={cat} refresh={refresh} />
+}
 
 const CatsView: React.FC<{ cat?: Cat; refresh?: () => void }> = ({
   cat,
@@ -48,7 +48,7 @@ const CatsView: React.FC<{ cat?: Cat; refresh?: () => void }> = ({
         <div style={{ width: "512px", height: "512px", background: "gray" }} />
       )}
     </>
-  );
-};
+  )
+}
 
-export default CatsWrapper;
+export default CatsWrapper

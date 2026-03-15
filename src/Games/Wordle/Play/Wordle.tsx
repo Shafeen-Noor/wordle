@@ -1,7 +1,13 @@
-import { WordleProvider, useWordle, useWordleGuess, useWordleLetterState } from "./context"
+import {
+  WordleProvider,
+  useWordle,
+  useWordleGuess,
+  useWordleLetterState,
+} from "./context"
 import Guessed from "./Guessed/Guessed"
 import Keyboard from "./Keyboard/Keyboard"
 
+/** Entry point — provides Wordle state to the tree. */
 const WordleWrapper: React.FC = () => {
   return (
     <WordleProvider>
@@ -10,6 +16,7 @@ const WordleWrapper: React.FC = () => {
   )
 }
 
+/** Game layout — reads from context, no prop drilling. */
 const Wordle: React.FC = () => {
   const state = useWordle()
   const getState = useWordleLetterState()

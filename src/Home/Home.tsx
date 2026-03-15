@@ -1,5 +1,5 @@
-import { Link } from "react-router";
-import games from "../Games";
+import { Link } from "react-router"
+import games from "../Games"
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

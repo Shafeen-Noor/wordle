@@ -1,5 +1,5 @@
-import { lazy } from "react";
-import type { Game } from "./types";
+import { lazy } from "react"
+import type { Game } from "./types"
 
 const games: Record<string, Game> = {
   wordle: {
@@ -14,6 +14,6 @@ const games: Record<string, Game> = {
     title: "Cats",
     Play: lazy(() => import("./Cats/Play")),
   },
-};
+}
 
-export default games;
+export default games
