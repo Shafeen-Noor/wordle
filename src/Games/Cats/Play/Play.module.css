@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.6rem 1.2rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.button:hover:not(:disabled) {
+  background: #2a2a2a;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.image {
+  border-radius: 0.75rem;
+  max-width: 100%;
+}
+
+.placeholder {
+  width: 512px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  background: #2a2a2a;
+  border-radius: 0.75rem;
+}
+
+.error {
+  color: #f87171;
+  font-size: 0.9rem;
+}

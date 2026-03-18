@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: #6ee7b7;
+}
+
+.outlet {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}

@@ -1,7 +1,8 @@
 import { Suspense } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 
-import { useCat, type Cat } from "../api"
+import { useCat, type Animal } from "../api"
+import styles from "./Play.module.css"
 
 function getErrorMessage(error: unknown): string {
   if (error instanceof Error) return `Error: ${error.message}`
@@ -12,10 +13,12 @@ const CatsWrapper: React.FC = () => {
   return (
     <ErrorBoundary
       fallbackRender={({ error, resetErrorBoundary }) => (
-        <>
-          <button onClick={resetErrorBoundary}>Retry</button>
-          <div>{getErrorMessage(error)}</div>
-        </>
+        <div className={styles.wrapper}>
+          <p className={styles.error}>{getErrorMessage(error)}</p>
+          <button className={styles.button} onClick={resetErrorBoundary}>
+            Retry
+          </button>
+        </div>
       )}
     >
       <Suspense fallback={<CatsView />}>
@@ -27,27 +30,34 @@ const CatsWrapper: React.FC = () => {
 
 const CatsPlay: React.FC = () => {
   const [cat, { refresh }] = useCat()
-  return <CatsView cat={cat} refresh={refresh} />
+  return <CatsView animal={cat} refresh={refresh} />
 }
 
-const CatsView: React.FC<{ cat?: Cat; refresh?: () => void }> = ({
-  cat,
+const CatsView: React.FC<{ animal?: Animal; refresh?: () => void }> = ({
+  animal,
   refresh,
 }) => {
   return (
-    <>
-      <div>
-        <button disabled={!refresh} onClick={() => refresh?.()}>
-          Get new Cat!
-        </button>
-      </div>
+    <div className={styles.wrapper}>
+      <button
+        className={styles.button}
+        disabled={!refresh}
+        onClick={() => refresh?.()}
+      >
+        Get new Cat!
+      </button>
 
-      {cat ? (
-        <img src={cat.url} width="512" alt="A random cat" />
+      {animal ? (
+        <img
+          className={styles.image}
+          src={animal.url}
+          width={512}
+          alt="A random cat"
+        />
       ) : (
-        <div style={{ width: "512px", height: "512px", background: "gray" }} />
+        <div className={styles.placeholder} />
       )}
-    </>
+    </div>
   )
 }
 
